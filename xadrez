@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+// Constantes definindo o número de casas para cada peça
+const int BISPO_MOV = 5;   // 5 casas na diagonal superior direita
+const int TORRE_MOV = 5;   // 5 casas para a direita
+const int RAINHA_MOV = 8;  // 8 casas para a esquerda
+
+int main() {
+    int i;
+
+    // Movimento do Bispo - diagonal superior direita
+    // Usando estrutura for
+    printf("Movimento do Bispo (Diagonal Superior Direita):\n");
+    for(i = 1; i <= BISPO_MOV; i++) {
+        // Para representar a diagonal, consideramos subir e ir para a direita
+        printf("Casa %d: Cima e Direita\n", i);
+    }
+    printf("\n");
+
+    // Movimento da Torre - para a direita
+    // Usando estrutura while
+    printf("Movimento da Torre (Direita):\n");
+    i = 1;
+    while(i <= TORRE_MOV) {
+        printf("Casa %d: Direita\n", i);
+        i++;
+    }
+    printf("\n");
+
+    // Movimento da Rainha - para a esquerda
+    // Usando estrutura do-while
+    printf("Movimento da Rainha (Esquerda):\n");
+    i = 1;
+    do {
+        printf("Casa %d: Esquerda\n", i);
+        i++;
+    } while(i <= RAINHA_MOV);
+    printf("\n");
+
+    return 0;
+}
