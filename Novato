@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+#define TAMANHO 5
+
+int main() {
+    // Tabuleiro 5x5 inicializado com zeros (sem navios)
+    int tabuleiro[TAMANHO][TAMANHO] = {0};
+
+    // Definindo manualmente as posições dos navios
+    // Navio vertical de tamanho 3 na coluna 2, linhas 1 a 3
+    int navioVerticalX = 2;
+    int navioVerticalYStart = 1;
+    int navioVerticalTamanho = 3;
+
+    // Navio horizontal de tamanho 4 na linha 4, colunas 0 a 3
+    int navioHorizontalY = 4;
+    int navioHorizontalXStart = 0;
+    int navioHorizontalTamanho = 4;
+
+    // Posicionando navio vertical no tabuleiro
+    for (int i = 0; i < navioVerticalTamanho; i++) {
+        tabuleiro[navioVerticalYStart + i][navioVerticalX] = 1;
+    }
+
+    // Posicionando navio horizontal no tabuleiro
+    for (int i = 0; i < navioHorizontalTamanho; i++) {
+        tabuleiro[navioHorizontalY][navioHorizontalXStart + i] = 1;
+    }
+
+    // Exibindo as coordenadas do navio vertical
+    printf("Coordenadas do navio vertical:\n");
+    for (int i = 0; i < navioVerticalTamanho; i++) {
+        printf("Parte do navio na posicao: (%d, %d)\n", navioVerticalYStart + i, navioVerticalX);
+    }
+
+    // Exibindo as coordenadas do navio horizontal
+    printf("\nCoordenadas do navio horizontal:\n");
+    for (int i = 0; i < navioHorizontalTamanho; i++) {
+        printf("Parte do navio na posicao: (%d, %d)\n", navioHorizontalY, navioHorizontalXStart + i);
+    }
+
+    return 0;
+}
